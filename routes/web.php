@@ -12,5 +12,5 @@ Route::get('ip-addresses', [IpAddressController::class, 'index']);
 Route::get('ip-addresses/{id}', [IpAddressController::class, 'show']);
 
 Route::get('campuses', [CampusController::class, 'index']);
-Route::get('campuses/{id}', [CampusController::class, 'show']);
+// Route::get('campuses/{id}', [CampusController::class, 'show']);
 
