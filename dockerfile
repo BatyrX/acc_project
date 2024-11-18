@@ -33,11 +33,11 @@ RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache \
 # Устанавливаем зависимости Laravel с помощью Composer
 RUN composer install --no-dev --optimize-autoloader
 
-# Выполняем команды Laravel (опционально)
+# Выполняем команды Laravel
 RUN php artisan config:clear && php artisan cache:clear
 
 # Открываем порт 9000 для PHP-FPM
 EXPOSE 9000
 
-# Стартуем PHP-FPM
+# Запуск PHP-FPM
 CMD ["php-fpm"]
