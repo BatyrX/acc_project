@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,21 +12,25 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // Очистите таблицу перед сидингом
+        User::truncate();
+
+        // Создайте статичных пользователей
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
-            'phone' => '1234567890', 
+            'phone' => '1234567890',
             'password' => bcrypt('password'),
         ]);
-    }
 
-    public function run1(): void
-    {
         User::factory()->create([
             'name' => 'Taka',
             'email' => 'root@example.com',
-            'phone' => '1234564567', 
+            'phone' => '1234564567',
             'password' => bcrypt('root'),
         ]);
+
+        // Создайте дополнительных пользователей с помощью Faker
+        User::factory()->count(10)->create();
     }
 }
