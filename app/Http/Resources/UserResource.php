@@ -20,6 +20,7 @@ class UserResource extends JsonResource
             'phone' => $this->phone,
             'email' => $this->email,
             'role' => $this->role,
+            'password' => $this->password,
             'ip_addresses' => IpAddressResource::collection($this->ipAddresses),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
